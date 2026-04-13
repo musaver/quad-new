@@ -11,7 +11,7 @@ export default function Footer() {
                 <div className="tj_footer_widget footer_info tj-fade" data-delay=".5">
                   <div className="footer_logo">
                     <Link href="/" className="logo">
-                      <img src="/assets/images/logos/secondary-logo.svg" alt="QUAD" />
+                      <img src="/assets/images/logos/secondary-logo.png" alt="Logo" />
                     </Link>
                   </div>
                   <div className="subscription_wrap">

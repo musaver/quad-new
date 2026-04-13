@@ -11,7 +11,7 @@ export default function Header() {
               <div className="tj-header_wrap">
                 <div className="site_logo">
                   <Link className="logo" href="/">
-                    <img src="/assets/images/logos/primary-logo.svg" alt="QUAD" />
+                    <img src="/assets/images/logos/primary-logo.png" alt="LOGO" />
                   </Link>
                 </div>
 

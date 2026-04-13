@@ -10,7 +10,7 @@ export default function Offcanvas() {
           <div className="offcanvas_top d-flex flex-wrap align-items-center justify-content-between gap-3">
             <div className="offcanvas_logo">
               <Link href="/" className="logo">
-                <img src="/assets/images/logos/primary-logo.svg" alt="QUAD" />
+                <img src="/assets/images/logos/primary-logo.png" alt="LOGO" />
               </Link>
             </div>
 
