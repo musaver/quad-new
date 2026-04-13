@@ -21,7 +21,6 @@ const SCRIPTS = [
   "/assets/js/vanilla-tilt.min.js",
   "/assets/js/imagesloaded-pkgd.js",
   "/assets/js/isotope.pkgd.min.js",
-  "/assets/js/preloader.js",
   "/assets/js/gsap-custom-animations.js",
   "/assets/js/window-shape-animation.js",
   "/assets/js/main.js",
