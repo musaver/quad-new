@@ -1,66 +1,50 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Preloader from "./components/Preloader";
+import Offcanvas from "./components/Offcanvas";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import HeroSection from "./components/sections/HeroSection";
+import AboutSection from "./components/sections/AboutSection";
+import FeaturesSection from "./components/sections/FeaturesSection";
+import ProcessSection from "./components/sections/ProcessSection";
+import HowWeAreDifferentSection from "./components/sections/HowWeAreDifferentSection";
+import H2ServiceSection from "./components/sections/H2ServiceSection";
+import ProjectSection from "./components/sections/ProjectSection";
+import ServicesSection from "./components/sections/ServicesSection";
+import TeamSection from "./components/sections/TeamSection";
+import TestimonialSection from "./components/sections/TestimonialSection";
+import ClientsSection from "./components/sections/ClientsSection";
+import BlogSection from "./components/sections/BlogSection";
+import CTASection from "./components/sections/CTASection";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <Preloader />
+      <Offcanvas />
+      <div className="has-smooth" id="has_smooth"></div>
+      <div id="smooth-wrapper">
+        <div id="smooth-content">
+          <Header />
+          <main>
+            <HeroSection />
+            <AboutSection />
+            <FeaturesSection />
+            <H2ServiceSection />
+            <ProjectSection />
+          <ProcessSection />
+            
+            {/*<TeamSection />*/}
+            <TestimonialSection />
+            <ServicesSection />
+
+            <ClientsSection />
+            
+            <BlogSection />
+            <CTASection />
+          </main>
+          <Footer />
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </div>
+    </>
   );
 }
