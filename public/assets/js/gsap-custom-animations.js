@@ -30,12 +30,13 @@
 			hasSmoothElement &&
 			hasSmoothElement.classList.contains("has-smooth")
 		) {
+			const isDesktop = window.innerWidth >= 992;
 			// Create new smoother
 			let smoother = ScrollSmoother.create({
 				wrapper: "#smooth-wrapper",
 				content: "#smooth-content",
 				smooth: 1.2,
-				effects: true,
+				effects: isDesktop,
 				smoothTouch: 0.1,
 				normalizeScroll: {
 					allowNestedScroll: true,

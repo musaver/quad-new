@@ -4,3 +4,26 @@
 *::after {
   box-sizing: border-box;
 }
+
+/* Fix: hero video section overlap on mobile */
+@media (max-width: 991px) {
+  .h1-hero-section {
+    position: relative !important;
+    transform: none !important;
+    top: auto !important;
+    margin-top: 0 !important;
+  }
+
+  .h1_hero_content_wrap {
+    height: auto !important;
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+
+  .h1-video-section {
+    position: relative !important;
+    transform: none !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
