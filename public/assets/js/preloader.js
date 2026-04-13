@@ -33,8 +33,8 @@
 			const marquee = document.querySelector(".loading_marquee");
 			const original = marquee.querySelector(".marquee_text");
 
-			// Duplicate marquee text
-			const duplicateCount = 200;
+			// Duplicate marquee text (reduced for performance)
+			const duplicateCount = 20;
 			for (let i = 1; i < duplicateCount; i++) {
 				const clone = original.cloneNode(true);
 				marquee.appendChild(clone);
@@ -53,14 +53,14 @@
 				self.exit(preloader);
 			};
 
-			// Progress animation (smooth 0-100%)
+			// Progress animation (faster 0-100%)
 			const progressTimer = setInterval(() => {
 				if (document.readyState === "complete") {
 					isLoaded = true;
 				}
 				if (percent < 100) {
-					// Speed up when loaded
-					const increment = isLoaded ? 3 : 0.5;
+					// Much faster increments for quicker loading
+					const increment = isLoaded ? 10 : 2;
 					percent += increment;
 					percent = Math.min(percent, 100);
 
@@ -74,7 +74,7 @@
 					clearInterval(progressTimer);
 					completePreloader();
 				}
-			}, 20);
+			}, 16);
 		},
 
 		exit: function (preloader) {
@@ -86,23 +86,23 @@
 
 			const preTl = gsap.timeline();
 			preTl.to([marquee, preloaderText], {
-				delay: 0.5,
+				delay: 0.1,
 				opacity: 0,
-				duration: 0.4,
+				duration: 0.2,
 			});
 			preTl
 				.to(preloaderSvg, {
-					duration: 0.5,
+					duration: 0.3,
 					attr: { d: curve },
 					ease: "power2.in",
 				})
 				.to(preloaderSvg, {
-					duration: 0.5,
+					duration: 0.3,
 					attr: { d: flat },
 				});
 			preTl.to(preloader, {
 				yPercent: -100,
-				duration: 0.6,
+				duration: 0.4,
 				ease: "power2.inOut",
 				onStart: () => {
 					preloader.remove();

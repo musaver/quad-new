@@ -1,3 +1,4 @@
+import Preloader from "./components/Preloader";
 import Offcanvas from "./components/Offcanvas";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -18,6 +19,7 @@ import CTASection from "./components/sections/CTASection";
 export default function Home() {
   return (
     <>
+      <Preloader />
       <Offcanvas />
       <div className="has-smooth" id="has_smooth"></div>
       <div id="smooth-wrapper">
