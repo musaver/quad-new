@@ -1478,7 +1478,10 @@
 		if (document.readyState === "complete") {
 			mainCustomJs();
 			if (typeof GSAPAnimations !== "undefined") {
-				setTimeout(() => GSAPAnimations.init(), 2000);
+				// Run after layout so SplitText / hero measurements are correct; no artificial delay.
+				requestAnimationFrame(() => {
+					GSAPAnimations.init();
+				});
 			}
 		}
 	});

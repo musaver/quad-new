@@ -15,10 +15,10 @@ export default function HeroSection() {
                     <img src="/assets/gif/hero-shape.gif" alt="Shape" />
                   </div>
 
-                  <h1 className="hero_title uppercase fs-100">
+                  <h1 className="hero_title uppercase fs-90">
                     <i className="tji-arrow-big-right"></i>
-                    Specialized Digital<br />
-                    Growth Teams<br />
+                    Your Entire  <br />
+                    Digital Department <br />
                     Under One Roof
                   </h1>
                 </div>
@@ -35,10 +35,9 @@ export default function HeroSection() {
                     </ul>
 
                     <div className="desc fs-18">
-                      From marketing and content to software and AI systems, we
-                      connect every client with niche-specific experts who
-                      understand their industry and deliver coordinated digital
-                      execution.
+                    Stop managing five different agencies. 
+                    We provide specialized teams for marketing, content, software, 
+                    and Al-all working together to scale your business.
                     </div>
 
                     <div className="hero_buttons d-inline-flex flex-wrap">

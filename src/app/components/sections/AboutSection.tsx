@@ -14,8 +14,8 @@ export default function AboutSection() {
                   [ <span>How We Work</span> ]
                 </span>
 
-                <h2 className="sec_title title-highlight">
-                The QUAD Advantage: Integrated Expertise, Tailored for Your Business
+                <h2 className="sec_title title-highlight fs-90">
+                Tired of Disconnected Agencies?
                 </h2>
               </div>
 
@@ -26,13 +26,13 @@ export default function AboutSection() {
                   data-delay="0.15"
                 >
                   <div className="desc fs-18">
-                  Many businesses struggle with managing multiple vendors for ads,
-content, web, and AI. At QUAD, we've built a better way. You come to one company, and
-we identify your industry and business need. You are then routed to the relevant
-specialist team—experts who live and breathe your market. Strategy, execution, and
-reporting remain unified across departments, ensuring seamless delivery and
-consistent results. This means less vendor chaos for you, faster execution, and stronger
-consistency across your brand, marketing, and technology.
+                  Most businesses waste time and money managing separate vendors for 
+                  ads, web, and content. They don't talk to each other, 
+                  and your brand suffers.
+                  <br /> <br />
+                  <strong>The QUAD Solution:</strong> We assign a dedicated specialist team to your niche. 
+                  You get the precision of a boutique agency with the scale and 
+                  integration of a full-service firm.
                   </div>
 
                   <a

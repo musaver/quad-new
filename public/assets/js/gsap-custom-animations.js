@@ -57,14 +57,15 @@
 			// Initialize smooth scrolling FIRST
 			initSmoothScrolling();
 
-			// Start animations immediately (no delay)
+			// Hero first: above-the-fold SplitText + timeline must not wait on every .tj-fade on the page
+			this.h1HeroAnimation();
+			this.h1HeroVideoAnimation();
+
 			this.fadeElements();
 			this.parallaxImages();
 			this.counterAnimation();
 			this.titleAnimation();
 			this.splitFlipText();
-			this.h1HeroAnimation();
-			this.h1HeroVideoAnimation();
 			this.h1ProcessSlider();
 			this.h1ProjectScroll();
 			this.imageScalingAnimation();
@@ -572,7 +573,9 @@
 			);
 			if (h1Hero) {
 				h1Hero.classList.add("activeAnimation");
-				h1HeroVideo.classList.add("activeAnimation");
+				if (h1HeroVideo) {
+					h1HeroVideo.classList.add("activeAnimation");
+				}
 			} else {
 				return;
 			}
@@ -592,7 +595,9 @@
 			const heroLeftContent = h1HeroAnimation.querySelector(
 				".bottom_left_content",
 			);
-			const heroVideo = h1HeroVideoAnimation.querySelector(".h1_hero_video");
+			const heroVideo = h1HeroVideoAnimation
+				? h1HeroVideoAnimation.querySelector(".h1_hero_video")
+				: null;
 			const heroScrollDown = h1HeroAnimation.querySelector(".tj_scroll_down");
 
 			const h1HeroTl = gsap.timeline({
@@ -783,6 +788,8 @@
 						const processNo = gsap.utils.toArray(".h1_process_no > span");
 
 						let totalProcessItems = processItems.length;
+						// Opacity for steps already passed (stacked above active): 1→0.15, 2→0.24, 3→0.4
+						const passedStepOpacity = [0.15, 0.24, 0.4];
 
 						processItems.forEach((item, index) => {
 							gsap.set(item, {
@@ -837,7 +844,9 @@
 									if (index < activeIndex) {
 										gsap.to(item, {
 											y: 0,
-											opacity: `${0.25 * (index + 1)}`,
+											opacity:
+												passedStepOpacity[index] ??
+												passedStepOpacity[passedStepOpacity.length - 1],
 											duration: 0.4,
 											ease: "power1.out",
 										});

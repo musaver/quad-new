@@ -147,7 +147,7 @@ export default function Footer() {
       </div>
 
       <div className="h3_footer_large_text_area tj-fade" data-delay=".3">
-          <h2 className="h3_footer_large_text tj-text-gardient "><span>STARTUP AGENCY</span>
+          <h2 className="h3_footer_large_text tj-text-gardient "><span>QUAD SOLUTIONS</span>
           </h2>
         </div>
     </footer>

@@ -2,42 +2,34 @@ const services = [
   {
     num: "01",
     icon: "tji-service-4",
-    title: "Digital Marketing",
+    title: "Growth Marketing",
     description:
-      "Drive traffic, generate leads, and optimize campaigns.",
-    categories: ["SEO", "Ads", "Leads"],
+      "We don't just run ads; we build systems that bring in customers.",
+    categories: ["Paid Ads,", "SEO,", "Lead Gen"],
   },
   {
     num: "02",
     icon: "tji-service-1",
-    title: "Content Creation",
+    title: "Creative Production",
     description:
-      "High-quality visuals, promotional content, and AI-generated media.",
-    categories: ["Visuals", "Promo", "AI Media"],
+      "High-end visuals and content that actually represent your brand.",
+    categories: ["Photography", "Video", "Post Production"],
   },
   {
     num: "03",
-    icon: "tji-service-2",
-    title: "Post-Production",
+    icon: "tji-service-5",
+    title: "Digital Products",
     description:
-      "Polished graphic design, video editing, and visual refinement.",
-    categories: ["Graphics", "Video", "Editing"],
-  },
-  {
-    num: "04",
-    icon: "tji-service-3",
-    title: "Software Development",
-    description:
-      "Custom websites, mobile apps, and scalable digital products.",
-    categories: ["Web", "Mobile", "Products"],
+      "Scalable software and websites built for performance, not just looks.",
+    categories: ["Web & App Development", "Custom Software"],
   },
   {
     num: "05",
-    icon: "tji-service-5",
-    title: "AI Solutions & Automation",
+    icon: "tji-service-3",
+    title: "AI & Automation",
     description:
       "Enhance efficiency, automate workflows, and deploy intelligent agents.",
-    categories: ["AI", "Automation", "Agents"],
+    categories: ["Al Chatbots", "Workflow Automation", "Al Agents"],
   },
 ];
 

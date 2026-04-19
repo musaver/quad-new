@@ -29,7 +29,7 @@ export default function HowWeAreDifferentSection() {
           <div className="col-12 col-lg-4">
             <div className="section_heading">
               <span className="sec_subtitle tj-fade">
-                [ <span>Why Choose QUAD</span> ]
+                [ <span>Why QUAD</span> ]
               </span>
               <h3 className="sec_title tj-fade" style={{ fontSize: '20px', lineHeight: '1.3', marginTop: '15px' }}>
                 The QUAD Difference: Precision, Integration, and Collective Intelligence

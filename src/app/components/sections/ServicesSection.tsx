@@ -1,26 +1,34 @@
 const services = [
   {
     num: "01",
-    title: "Niche-Specific \n Expert Assignment",
+    title: "Niche Experts",
+    description:
+      "You don't get a generalist. You get a team that knows your industry.",
     categories: ["Specialists", "Industry Focus", "Expertise"],
     cursorText: "Explore <br/> more<i class='tji-arrow-up-right'></i>",
   },
   {
     num: "02",
-    title: "One Umbrella \n Multiple Divisions",
-    categories: ["Unified", "Integrated", "Seamless"],
+    title: "Knowledge Transfer",
+    description:
+      "Our teams share insights across niches, giving you a competitive edge.",
+    categories: ["Shared", "Competitive", "Best Practices"],
     cursorText: "Explore <br /> more<i class='tji-arrow-up-right'></i>",
   },
   {
     num: "03",
-    title: "Shared Knowledge \n Across Teams",
-    categories: ["Collaboration", "Insights", "Synergy"],
+    title: "AI-Accelerated",
+    description:
+      "We use AI to work faster and smarter, without losing the human touch.",
+    categories: ["AI-Powered", "Human-AI", "Scalable"],
     cursorText: "Explore <br /> more<i class='tji-arrow-up-right'></i>",
   },
   {
     num: "04",
-    title: "Human-Led Quality \n AI Acceleration",
-    categories: ["Quality", "Speed", "Innovation"],
+    title: "Unified Strategy",
+    description:
+      "One point of contact. One cohesive brand. Zero chaos.",
+    categories: ["Cohesive", "Consistent", "Clear"],
     cursorText: "Explore <br /> more<i class='tji-arrow-up-right'></i>",
   },
 ];
@@ -31,34 +39,14 @@ export default function ServicesSection() {
       <div className="container-fluid">
         <div className="row">
           <div className="col">
-            <div className="h1_services_wrapper">
-              <div className="section_heading text-center" style={{ maxWidth: '100%' }}>
-                <span className="sec_subtitle tj-fade">
-                  [ <span>Why Choose QUAD</span> ]
-                </span>
+            <div className="h1_services_wrapper h1-services-with-desc">
+              <div
+                className="section_heading text-center"
+                style={{ maxWidth: "100%" }}
+              >
                 <h2 className="sec_title tj-text-light-1 tj-chars-up fs-50">
-                  The QUAD Difference: Precision, Integration, and Collective Intelligence
+                  Why QUAD
                 </h2>
-              </div>
-
-              <div className="section_heading_bottom d-flex flex-wrap align-items-center justify-content-between">
-                <div className="tj-fade d-none d-lg-inline-flex" data-direction="left">
-                  <a href="/about" className="tj_icon_btn flip-text-wrap view-more-btn">
-                    <div className="icon_btn scale">
-                      <span>
-                        <i className="tji-arrow-right"></i>
-                        <i className="tji-arrow-right"></i>
-                      </span>
-                    </div>
-                    <span className="flip-text">Learn more</span>
-                  </a>
-                </div>
-
-                <div className="service_desc fs-18 tj-text-light-2 tj-fade" data-direction="right" style={{ maxWidth: '550px' }}>
-                  In a fragmented digital landscape, QUAD stands apart. We offer the convenience
-                  of one partner with the precision of specialist execution, ensuring your brand
-                  message and technical implementation are always aligned.
-                </div>
               </div>
 
               <div className="h1_services_items">
@@ -70,19 +58,30 @@ export default function ServicesSection() {
                   >
                     <a href="/service-details" className="service_link"></a>
                     <div className="service_content">
-                      <div className="service_count">[ <span>{service.num}</span> ]</div>
-                      <h3 className="service_title reveal-hover-text">
-                        {service.title.split("\n").map((line, i) => (
-                          <span key={i}>
-                            {line}
-                            {i < service.title.split("\n").length - 1 && <br />}
-                          </span>
-                        ))}
-                      </h3>
-                      <div className="service_categories">
-                        {service.categories.map((cat) => (
-                          <span key={cat} className="category">{cat}</span>
-                        ))}
+                      <div className="service_count">
+                        [ <span>{service.num}</span> ]
+                      </div>
+                      <div className="service_body">
+                        <div className="service_main">
+                          <h3 className="service_title reveal-hover-text">
+                            {service.title.split("\n").map((line, i) => (
+                              <span key={i}>
+                                {line}
+                                {i < service.title.split("\n").length - 1 && (
+                                  <br />
+                                )}
+                              </span>
+                            ))}
+                          </h3>
+                          <p className="service_desc">{service.description}</p>
+                        </div>
+                        <div className="service_categories">
+                          {service.categories.map((cat) => (
+                            <span key={cat} className="category">
+                              {cat}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -90,7 +89,10 @@ export default function ServicesSection() {
               </div>
 
               <div className="tj-fade d-lg-none text-center">
-                <a href="/services" className="tj_icon_btn flip-text-wrap view-more-btn">
+                <a
+                  href="/services"
+                  className="tj_icon_btn flip-text-wrap view-more-btn"
+                >
                   <div className="icon_btn scale">
                     <span>
                       <i className="tji-arrow-right"></i>
