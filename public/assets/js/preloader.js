@@ -53,14 +53,19 @@
 				self.exit(preloader);
 			};
 
-			// Progress animation (faster 0-100%)
-			const progressTimer = setInterval(() => {
-				if (document.readyState === "complete") {
+			// DOM ready (interactive) — do not wait for video/images (window "load" / complete)
+			const checkDomReady = () => {
+				if (document.readyState !== "loading") {
 					isLoaded = true;
 				}
+			};
+			checkDomReady();
+			document.addEventListener("readystatechange", checkDomReady);
+
+			// Progress animation — faster ramp so we do not add ~1s artificial wait
+			const progressTimer = setInterval(() => {
 				if (percent < 100) {
-					// Much faster increments for quicker loading
-					const increment = isLoaded ? 10 : 2;
+					const increment = isLoaded ? 18 : 8;
 					percent += increment;
 					percent = Math.min(percent, 100);
 
@@ -69,12 +74,12 @@
 					});
 				}
 
-				// Only exit when ALL conditions met
 				if (percent >= 100 && isLoaded) {
 					clearInterval(progressTimer);
+					document.removeEventListener("readystatechange", checkDomReady);
 					completePreloader();
 				}
-			}, 16);
+			}, 12);
 		},
 
 		exit: function (preloader) {

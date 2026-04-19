@@ -74,7 +74,14 @@ export default function HeroSection() {
             <div className="col">
               <div className="h1_hero_video_wrap">
                 <div className="h1_hero_video">
-                  <video autoPlay loop muted playsInline>
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="metadata"
+                    poster="/assets/images/projects/h1-project-img-1.webp"
+                  >
                     <source src="/assets/videos/h1-hero.mp4" type="video/mp4" />
                   </video>
 
