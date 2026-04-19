@@ -121,3 +121,47 @@
     gap: 12px;
   }
 }
+
+/* Hero video — loading overlay until first frame / metadata */
+.h1_hero_video.hero-video-area {
+  position: relative;
+}
+
+.hero-video-area__loading {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(12, 12, 12, 0.35);
+  backdrop-filter: blur(2px);
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+  pointer-events: none;
+}
+
+.hero-video-area__spinner {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 3px solid rgba(252, 245, 234, 0.25);
+  border-top-color: var(--tj-color-theme-primary, #de1a39);
+  animation: hero-video-spin 0.75s linear infinite;
+}
+
+@keyframes hero-video-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hero-video-area__video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-video-area__video:not(.is-ready) {
+  opacity: 0.96;
+}
