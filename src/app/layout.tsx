@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ClientScripts from "./components/ClientScripts";
+import HydrationBridge from "./components/HydrationBridge";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -31,6 +32,7 @@ export default function RootLayout({
       </head>
       <body>
         {children}
+        <HydrationBridge />
         <ClientScripts />
       </body>
     </html>

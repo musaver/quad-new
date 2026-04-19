@@ -1474,15 +1474,44 @@
 	if (typeof TJPreloader !== "undefined") {
 		TJPreloader.init();
 	}
-	document.addEventListener("readystatechange", () => {
-		if (document.readyState === "complete") {
-			mainCustomJs();
-			if (typeof GSAPAnimations !== "undefined") {
-				// Run after layout so SplitText / hero measurements are correct; no artificial delay.
+
+	let legacyBootstrapped = false;
+	function bootLegacyScripts() {
+		if (legacyBootstrapped) {
+			return;
+		}
+		legacyBootstrapped = true;
+		mainCustomJs();
+		if (typeof GSAPAnimations === "undefined") {
+			return;
+		}
+		requestAnimationFrame(() => {
+			GSAPAnimations.init();
+			if (typeof ScrollTrigger !== "undefined") {
 				requestAnimationFrame(() => {
-					GSAPAnimations.init();
+					ScrollTrigger.refresh();
 				});
 			}
+		});
+	}
+
+	function runWhenDocumentComplete() {
+		window.addEventListener("quad:hydrated", bootLegacyScripts, {
+			once: true,
+		});
+		if (typeof window.__quadHydrated !== "undefined" && window.__quadHydrated) {
+			queueMicrotask(bootLegacyScripts);
 		}
-	});
+		setTimeout(bootLegacyScripts, 2000);
+	}
+
+	if (document.readyState === "complete") {
+		runWhenDocumentComplete();
+	} else {
+		document.addEventListener("readystatechange", () => {
+			if (document.readyState === "complete") {
+				runWhenDocumentComplete();
+			}
+		});
+	}
 })(jQuery);
